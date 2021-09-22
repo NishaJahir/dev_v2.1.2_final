@@ -87,6 +87,13 @@ class NovalnetOrderConfirmationDataProvider
                     if(!empty($db_details['test_mode'])) {
                         $comments .= PHP_EOL . $paymentHelper->getTranslatedText('test_order');
                     }
+                    
+                    // Display error message in the confirmation page
+                    $statusMessage = $sessionStorage->getPlugin()->getValue('novalnet_status_message');
+                    if(!empty($statusMessage)) {
+                        $comments .= PHP_EOL . $statusMessage;
+                    }
+                    
                     $bank_details = array_merge($db_details, json_decode($invoiceDetails, true));
                     if(in_array($db_details['payment_id'], ['40','41'])) {
                         $comments .= PHP_EOL . $paymentHelper->getTranslatedText('guarantee_text');
