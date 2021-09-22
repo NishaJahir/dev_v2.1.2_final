@@ -952,6 +952,8 @@ class PaymentService
             $this->pushNotification($notificationMessage, 'success', 100);
             
         } else {
+            $statusMessage = $this->paymentHelper->getNovalnetStatusText($requestData);
+            $this->sessionStorage->getPlugin()->setValue('novalnet_status_message', $statusMessage);
             $this->pushNotification($notificationMessage, 'error', 100);
         }
           
