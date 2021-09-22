@@ -116,16 +116,8 @@ margin-top: 14px;
 }
 
 .payment-confirmation-btn {
-    padding: 6px .5rem;
-    border-radius: 0.1rem;
-    color: white!important;
-    background-color: #7ED321;
-    cursor: pointer;
+    margin-left: 36%;
+    margin-top: 2%;
+    width: 50%;
+    color: white;
 }
-.payment-confirmation-btn:hover {
-    background-color: #569117;
-}
-.payment-confirmation-btn > span {
-    font-weight: normal;
-}
-
